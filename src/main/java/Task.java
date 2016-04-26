@@ -6,12 +6,14 @@ public class Task {
   private boolean mCompleted;
   private LocalDateTime mCreatedAt;
   private static ArrayList<Task> instances = new ArrayList<Task>();
+  private int mId;
 
   public Task(String description) {
     mDescription = description;
     mCompleted = false;
     mCreatedAt = LocalDateTime.now();
     instances.add(this);
+    mId = instances.size();
   }
 
   public String getDescription() {
@@ -34,4 +36,7 @@ public class Task {
     instances.clear();
   }
 
+  public int getId() {
+    return mId;
+  }
 }
