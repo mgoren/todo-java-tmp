@@ -29,4 +29,9 @@ public class Task {
   public static ArrayList<Task> all() {
     return instances;
   }
+
+  public static void clear() {
+    instances.clear();
+  }
+
 }
