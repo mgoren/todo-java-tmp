@@ -3,6 +3,10 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class TaskTest {
+  @After
+  public void tearDown() {
+    Task.clear();
+  }
 
   @Test
   public void task_instantiatesCorrectly_true() {
@@ -45,7 +49,6 @@ public class TaskTest {
 
   @Test
   public void getId_tasksInstantiateWithAnID_1() {
-    Task.clear();  // THIS TEST WILL FAIL WITHOUT THIS LINE!
     Task myTask = new Task("Mow the lawn");
     assertEquals(1, myTask.getId());
   }
